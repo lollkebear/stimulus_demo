@@ -1,0 +1,13 @@
+<h2> Remaining Character Counter</h2>
+
+<div class="pt-2" data-controller="remaining-characters" data-remaining-characters-max-length=100>
+  <%= text_area :message, nil,
+    data: { target: "remaining-characters.message", action: "keyup->remaining-characters#updateCounter" },
+    placeholder: "Start typing here...",
+    class: "w-full block p-3 placeholder-gray-400 text-gray-700 rounded shadow focus:outline-none focus:shadow-outline" %>
+
+  <div class="text-gray-600 text-sm pt-1 text-right">
+    Characters left:
+    <span data-target="remaining-characters.counter"></span>
+  </div>
+</div>
